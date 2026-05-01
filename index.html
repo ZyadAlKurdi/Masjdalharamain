@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خريطة المسجد النبوي التفاعلية</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css">
+    <!-- إضافة أيقونات FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div id="sidebar">
+        <div class="header">
+            <img src="https://alharamain.gov.sa/images/logo.png" alt="Logo" width="80">
+            <h3>دليل المسجد النبوي</h3>
+        </div>
+        
+        <input type="text" id="searchBar" placeholder="ابحث عن باب أو خدمة..." onkeyup="searchLocation()">
+
+        <div class="filters">
+            <button class="btn active" onclick="filterMap('all')">الكل</button>
+            <button class="btn" onclick="filterMap('gate')"><i class="fa-solid fa-door-open"></i> الأبواب</button>
+            <button class="btn" onclick="filterMap('service')"><i class="fa-solid fa-hand-holding-droplet"></i> خدمات</button>
+            <button class="btn" onclick="filterMap('health')"><i class="fa-solid fa-medkit"></i> إسعاف</button>
+        </div>
+
+        <div id="location-list">
+            <!-- سيتم ملؤه بواسطة JavaScript -->
+        </div>
+    </div>
+
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
